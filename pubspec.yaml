@@ -36,6 +36,8 @@ dependencies:
   flutter_svg: ^1.0.0
   http: ^0.13.4
   flutter_rating_bar: ^4.0.0
+  scroll_snap_list: ^0.8.4
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,8 @@ flutter:
     - assets/image7.png
     - assets/rectangle16.jpg
     - assets/rectangle17.jpg
+    - assets/image8.jpeg
+    - assets/image12.png
 
   fonts:
     - family: Relaway

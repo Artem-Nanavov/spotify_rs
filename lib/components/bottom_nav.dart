@@ -1,13 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BottomNav extends StatelessWidget {
-  BottomNav({
-    Key? key,
-  }) : super(key: key);
+import '../navigations.dart';
+
+class BottomNav extends StatefulWidget {
+  const BottomNav({Key? key}) : super(key: key);
+
+  @override
+  State<BottomNav> createState() => _BottomNavState();
+}
+
+class _BottomNavState extends State<BottomNav> {
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    changeUrl(idx) {
+      switch (idx) {
+        case 0:
+          Navigator.pushNamed(
+            context,
+            RoutersNames.home,
+          );
+          break;
+
+        case 1:
+          Navigator.pushNamed(context, RoutersNames.percent);
+          break;
+
+        case 2:
+          Navigator.pushNamed(
+            context,
+            RoutersNames.bookmark,
+          );
+          break;
+
+        case 3:
+          Navigator.pushNamed(
+            context,
+            RoutersNames.cart,
+          );
+          break;
+      }
+    }
+
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 18),
       child: Container(
@@ -22,7 +58,15 @@ class BottomNav extends StatelessWidget {
             selectedItemColor: Colors.amber[800],
             showSelectedLabels: false,
             showUnselectedLabels: false,
+            currentIndex: _selectedIndex,
             type: BottomNavigationBarType.fixed,
+            onTap: (idx) {
+              changeUrl(idx);
+
+              setState(() {
+                _selectedIndex = idx;
+              });
+            },
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: SvgPicture.asset('assets/home.svg'),

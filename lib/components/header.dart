@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             'Рекомендации',
             textAlign: TextAlign.left,
             style: TextStyle(
-              fontFamily: 'MPLUSRounded1c',
+              fontFamily: 'Raleway',
               fontWeight: FontWeight.w700,
               fontSize: 28,
               color: Color(0xFF000000),
