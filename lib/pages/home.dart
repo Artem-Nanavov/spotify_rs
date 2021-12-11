@@ -4,12 +4,25 @@ import '../components/bottom_nav.dart';
 import '../components/recomended_item.dart';
 import '../components/header.dart';
 
-class HomePage extends StatelessWidget {
-  final int length;
+import '../types/product.dart';
 
-  const HomePage({
-    required this.length,
-  });
+import '../utils/api.dart';
+
+class HopePage extends StatefulWidget {
+  const HopePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HopePage> {
+  late Future<List<Product>> productAlbum;
+
+  @override
+  void initState() {
+    super.initState();
+    productAlbum = getProducts('https://fakestoreapi.com/products');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,30 +30,51 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xFFffffff),
       bottomNavigationBar: BottomNav(),
       appBar: CustomAppBar(),
-      body: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              children: List.generate((length / 2).round(), (index) {
-                return const RecomendedItem(
-                  image: '',
-                  price: 100,
-                  title: 'Чипсы рифлёные',
-                );
-              }),
-            ),
-            Column(
-              children: List.generate((length / 2).round(), (index) {
-                return const RecomendedItem(
-                  image: '',
-                  price: 100,
-                  title: 'Чипсы рифлёные',
-                );
-              }),
-            ),
-          ],
-        ),
+      body: FutureBuilder<List<Product>>(
+        future: productAlbum,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<Product> products = snapshot.data!;
+
+            return SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      ...products
+                          .map(
+                            (Product product) => RecomendedItem(
+                              image: product.image,
+                              price: product.price,
+                              title: product.title,
+                            ),
+                          )
+                          .toList(),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ...products
+                          .map(
+                            (Product product) => RecomendedItem(
+                              image: product.image,
+                              price: product.price,
+                              title: product.title,
+                            ),
+                          )
+                          .toList(),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+
+          return const CircularProgressIndicator();
+        },
       ),
     );
   }

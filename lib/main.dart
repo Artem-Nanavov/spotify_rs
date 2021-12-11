@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(
-        length: 100,
-      ),
+      home: HopePage(),
     );
   }
 }
