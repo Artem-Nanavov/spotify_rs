@@ -3,7 +3,7 @@ import os
 
 import uvicorn
 from dotenv import load_dotenv
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
 
 from recommendations import RecommendationsManager
 
@@ -18,8 +18,22 @@ manager = RecommendationsManager()
 
 @app.get('/{user_id}')
 async def recommendations(user_id: int):
-    return Response(str(manager.get_recommendations(user_id)))
+    return manager.get_recommendations(user_id)
+
+
+@app.get('/get-sales')
+async def sales():
+    return [
+        {
+            'лента': [
+                'купи две бутылки пива, третью тоже купи'
+            ],
+            'пятерочка': [
+                'два сырка по цене двух',
+            ]
+        },
+    ]
 
 
 if __name__ == '__main__':
-    uvicorn.run(app)
+    uvicorn.run('server:app', reload=DEBUG)
