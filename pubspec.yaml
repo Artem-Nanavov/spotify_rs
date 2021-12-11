@@ -73,6 +73,9 @@ flutter:
     - assets/rectangle17.jpg
     - assets/image8.jpeg
     - assets/image12.png
+    - assets/image15.jpg
+    - assets/image15.png
+    - assets/image151.jpg
 
   fonts:
     - family: Relaway

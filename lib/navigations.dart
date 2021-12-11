@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'pages/cart/cart.dart';
 import 'pages/percent/percent.dart';
 import 'pages/home/home.dart';
 import 'pages/product/product.dart';
@@ -25,7 +26,7 @@ class RouteGenerator {
       case RoutersNames.bookmark:
         return MaterialPageRoute(builder: (_) => HomePage());
       case RoutersNames.cart:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(builder: (_) => CartPage());
       case RoutersNames.product:
         if (args is String) {
           return MaterialPageRoute(
