@@ -25,7 +25,7 @@ class _BottomNavState extends State<BottomNav> {
           break;
 
         case 1:
-          Navigator.pushNamed(context, RoutersNames.percent);
+          Navigator.pushNamed(context, RoutersNames.percents);
           break;
 
         case 2:

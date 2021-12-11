@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'pages/cart/cart.dart';
-import 'pages/percent/percent.dart';
+import 'pages/percent/percent_container.dart';
+import 'pages/percents/percents.dart';
 import 'pages/home/home.dart';
 import 'pages/product/product.dart';
 
 class RoutersNames {
   static const home = '/';
+  static const percents = '/percents';
   static const percent = '/percent';
   static const bookmark = '/bookmark';
   static const cart = '/cart';
@@ -21,12 +23,22 @@ class RouteGenerator {
     switch (settings.name) {
       case RoutersNames.home:
         return MaterialPageRoute(builder: (_) => HomePage());
-      case RoutersNames.percent:
-        return MaterialPageRoute(builder: (_) => PercentPage());
+      case RoutersNames.percents:
+        return MaterialPageRoute(builder: (_) => PercentsSPage());
       case RoutersNames.bookmark:
         return MaterialPageRoute(builder: (_) => HomePage());
       case RoutersNames.cart:
         return MaterialPageRoute(builder: (_) => CartPage());
+      case RoutersNames.percent:
+        if (args is String) {
+          return MaterialPageRoute(
+            builder: (_) => PercentPage(
+              percent_id: args,
+            ),
+          );
+        }
+
+        return _errorRoute();
       case RoutersNames.product:
         if (args is String) {
           return MaterialPageRoute(
