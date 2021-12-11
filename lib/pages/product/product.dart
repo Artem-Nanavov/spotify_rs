@@ -35,30 +35,26 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFffffff),
-      appBar: GoBackAppBar(),
-      body: FutureBuilder<ProductDetail>(
-        future: productDetailAlbum,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            ProductDetail productDetail = snapshot.data!;
+    return FutureBuilder<ProductDetail>(
+      future: productDetailAlbum,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          ProductDetail productDetail = snapshot.data!;
 
-            return Details(
-              desc: productDetail.description,
-              image: productDetail.image,
-              price: productDetail.price,
-              product_id: productDetail.id,
-              title: productDetail.title,
-              rait: 3.1,
-            );
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
+          return Details(
+            desc: productDetail.description,
+            image: productDetail.image,
+            price: productDetail.price,
+            product_id: productDetail.id,
+            title: productDetail.title,
+            rait: 3.1,
+          );
+        } else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+        }
 
-          return const CircularProgressIndicator();
-        },
-      ),
+        return const CircularProgressIndicator();
+      },
     );
   }
 }

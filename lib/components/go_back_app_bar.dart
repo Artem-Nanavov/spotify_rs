@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class GoBackAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
+  final String title;
 
   GoBackAppBar({
     Key? key,
+    required this.title,
   })  : preferredSize = Size.fromHeight(50.0),
         super(key: key);
 
@@ -25,6 +27,21 @@ class GoBackAppBar extends StatelessWidget with PreferredSizeWidget {
       automaticallyImplyLeading: false,
       backgroundColor: const Color(0xFF353335),
       elevation: 0,
+      title: SizedBox(
+        width: double.infinity,
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 22,
+              fontFamily: 'Raleway',
+              fontWeight: FontWeight.w700,
+              color: Color(0xFFFFFFFF),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
