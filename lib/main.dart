@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './pages/home.dart';
+import './navigations.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HopePage(),
+      initialRoute: RoutersNames.home,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

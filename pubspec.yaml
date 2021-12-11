@@ -35,6 +35,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.0.0
   http: ^0.13.4
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,10 @@ flutter:
     - assets/shopping-bag.svg
     - assets/image3.jpg
     - assets/user_icon.jpg
+    - assets/image4.jpg
+    - assets/image7.png
+    - assets/rectangle16.jpg
+    - assets/rectangle17.jpg
 
   fonts:
     - family: Relaway

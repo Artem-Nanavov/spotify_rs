@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../types/product.dart';
+import 'type.dart';
 
 Future<List<Product>> getProducts(String url) async {
   http.Response response = await http.get(Uri.parse(url));

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../components/bottom_nav.dart';
-import '../components/recomended_item.dart';
-import '../components/header.dart';
+import '../../components/bottom_nav.dart';
+import '../../components/recomended_item.dart';
+import '../../components/header.dart';
 
-import '../types/product.dart';
+import 'type.dart';
 
-import '../utils/api.dart';
+import 'api.dart';
 
-class HopePage extends StatefulWidget {
-  const HopePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HopePage> {
+class _HomePageState extends State<HomePage> {
   late Future<List<Product>> productAlbum;
 
   @override
@@ -45,6 +45,7 @@ class _HomePageState extends State<HopePage> {
                       ...products
                           .map(
                             (Product product) => RecomendedItem(
+                              product_id: product.id,
                               image: product.image,
                               price: product.price,
                               title: product.title,
@@ -58,6 +59,7 @@ class _HomePageState extends State<HopePage> {
                       ...products
                           .map(
                             (Product product) => RecomendedItem(
+                              product_id: product.id,
                               image: product.image,
                               price: product.price,
                               title: product.title,
