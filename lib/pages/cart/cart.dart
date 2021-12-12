@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../components/bottom_nav.dart';
-import '../../components/recomended_item.dart';
-import '../../components/header.dart';
-
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
@@ -14,38 +10,37 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFffffff),
-      bottomNavigationBar: BottomNav(),
-      appBar: CustomAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Container(
-          child: Column(
-            children: [
-              const AuthItem(
-                img: 'assets/image15.jpg',
-                status: 'ВЫЙТИ',
-                subTitle: 'yandex.member@ya.ru',
-                title: 'Яндекс Маркет',
-                color: Color(0xFFED6B7D),
-              ),
-              AuthItem(
-                img: 'assets/image151.jpg',
-                status: 'ВХОД',
-                subTitle: 'yandex.member@ya.ru',
-                title: 'Озон',
-                color: Color(0xFF005BFF).withOpacity(0.5),
-              ),
-              AuthItem(
-                img: 'assets/image15.png',
-                status: 'ВХОД',
-                subTitle: 'yandex.member@ya.ru',
-                title: 'Wildberries',
-                color: Color(0xFF81118B).withOpacity(0.5),
-              )
-            ],
-          ),
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 20,
+        top: 30,
+      ),
+      child: Container(
+        child: Column(
+          children: [
+            const AuthItem(
+              img: 'assets/image15.jpg',
+              status: 'ВЫЙТИ',
+              subTitle: 'yandex.member@ya.ru',
+              title: 'Яндекс Маркет',
+              color: Color(0xFFED6B7D),
+            ),
+            AuthItem(
+              img: 'assets/image151.jpg',
+              status: 'ВХОД',
+              subTitle: 'yandex.member@ya.ru',
+              title: 'Озон',
+              color: Color(0xFF005BFF).withOpacity(0.5),
+            ),
+            AuthItem(
+              img: 'assets/image15.png',
+              status: 'ВХОД',
+              subTitle: 'yandex.member@ya.ru',
+              title: 'Wildberries',
+              color: Color(0xFF81118B).withOpacity(0.5),
+            )
+          ],
         ),
       ),
     );

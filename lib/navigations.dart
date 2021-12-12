@@ -21,14 +21,14 @@ class RouteGenerator {
     final args = settings.arguments;
 
     switch (settings.name) {
-      case RoutersNames.home:
-        return MaterialPageRoute(builder: (_) => HomePage());
-      case RoutersNames.percents:
-        return MaterialPageRoute(builder: (_) => PercentsSPage());
-      case RoutersNames.bookmark:
-        return MaterialPageRoute(builder: (_) => HomePage());
-      case RoutersNames.cart:
-        return MaterialPageRoute(builder: (_) => CartPage());
+      // case RoutersNames.home:
+      //   return MaterialPageRoute(builder: (_) => HomePage());
+      // case RoutersNames.percents:
+      //   return MaterialPageRoute(builder: (_) => PercentsSPage());
+      // case RoutersNames.bookmark:
+      //   return MaterialPageRoute(builder: (_) => HomePage());
+      // case RoutersNames.cart:
+      //   return MaterialPageRoute(builder: (_) => CartPage());
       case RoutersNames.percent:
         if (args is String) {
           return MaterialPageRoute(

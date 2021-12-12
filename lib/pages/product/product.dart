@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'components/product_details.dart';
 
-import '../../components/go_back_app_bar.dart';
-
 import './type.dart';
 
 import './api.dart';
@@ -53,7 +51,7 @@ class _ProductPageState extends State<ProductPage> {
           return Text('${snapshot.error}');
         }
 
-        return const CircularProgressIndicator();
+        return const Center(child: CircularProgressIndicator());
       },
     );
   }

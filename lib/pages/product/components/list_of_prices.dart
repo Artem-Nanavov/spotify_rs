@@ -39,7 +39,7 @@ class ListOfPrices extends StatelessWidget {
             const Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
-                '102.02₽',
+                '102.04₽',
                 style: TextStyle(
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
@@ -60,7 +60,7 @@ class ListOfPrices extends StatelessWidget {
             const Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
-                '102.02₽',
+                '12131.02₽',
                 style: TextStyle(
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
@@ -81,7 +81,7 @@ class ListOfPrices extends StatelessWidget {
             const Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
-                '102.02₽',
+                '123141.02\$',
                 style: TextStyle(
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,

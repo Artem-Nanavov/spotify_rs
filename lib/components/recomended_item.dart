@@ -64,6 +64,7 @@ class RecomendedItem extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       title,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 14,
                         fontFamily: 'Raleway',

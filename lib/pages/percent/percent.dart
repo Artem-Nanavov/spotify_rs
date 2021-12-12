@@ -92,7 +92,9 @@ class PercentComponent extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(
+                    top: 50,
+                  ),
                   width: double.infinity,
                   child: const Align(
                     alignment: Alignment.topLeft,

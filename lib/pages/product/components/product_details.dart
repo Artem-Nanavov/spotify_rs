@@ -74,7 +74,7 @@ class Details extends StatelessWidget {
                   ),
                 ),
               ),
-              Info(),
+              // Info(),
               Container(
                 margin: const EdgeInsets.only(top: 45),
                 child: RatingBar.builder(
