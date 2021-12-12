@@ -17,6 +17,8 @@ class RecomendedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var p = price * 73;
+
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(
@@ -49,7 +51,7 @@ class RecomendedItem extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    '$price руб.',
+                    '$p руб.',
                     style: const TextStyle(
                       fontFamily: 'Raleway',
                       fontWeight: FontWeight.w500,
