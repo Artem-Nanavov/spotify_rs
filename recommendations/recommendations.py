@@ -57,3 +57,20 @@ class RecommendationsManager:
             del result[i]['index']
 
         return result
+
+    @staticmethod
+    def _get_price(json):
+        return
+
+    def get_item_prices(self, item_name: str):
+        prices = self.df[self.df.ProductName == item_name].drop_duplicates(
+            subset=['MerchantName'])[['ProductCost', 'MerchantName']]
+
+        result = json.loads(prices.to_json(orient='table'))['data']
+
+        for i, _ in enumerate(result):
+            del result[i]['index']
+
+        result = sorted(result, key=lambda x: int(x.get('ProductCost', 0)))
+
+        return result
